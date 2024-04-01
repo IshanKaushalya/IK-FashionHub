@@ -22,5 +22,6 @@ struct CartIcon: View {
 struct CartIconPreviews : PreviewProvider{
     static var previews: some View{
         CartIcon(numberOfProducts: 1)
+        //test
     }
 }
