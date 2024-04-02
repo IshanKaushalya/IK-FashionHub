@@ -48,7 +48,7 @@ struct ClothingIcon: View {
                                 .bold()
                             Text("\(clothingDM.price, specifier: "%.2f")LKR")
                                 .font(.caption)
-                            
+                            //
                         }
                         
                         
