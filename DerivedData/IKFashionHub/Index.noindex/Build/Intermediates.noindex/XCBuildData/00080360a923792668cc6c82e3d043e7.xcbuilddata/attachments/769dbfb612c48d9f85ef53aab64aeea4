@@ -1,0 +1,12 @@
+{
+  "" : {
+    "dependencies" : "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Index.noindex/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphoneos/IKFashionHubTests.build/Objects-normal/arm64/IKFashionHubTests-master.d",
+    "diagnostics" : "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Index.noindex/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphoneos/IKFashionHubTests.build/Objects-normal/arm64/IKFashionHubTests-master.dia",
+    "emit-module-dependencies" : "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Index.noindex/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphoneos/IKFashionHubTests.build/Objects-normal/arm64/IKFashionHubTests-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Index.noindex/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphoneos/IKFashionHubTests.build/Objects-normal/arm64/IKFashionHubTests-master-emit-module.dia",
+    "swift-dependencies" : "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Index.noindex/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphoneos/IKFashionHubTests.build/Objects-normal/arm64/IKFashionHubTests-master.swiftdeps"
+  },
+  "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/IKFashionHubTests/IKFashionHubTests.swift" : {
+
+  }
+}

@@ -1,0 +1,13 @@
+Target dependency graph (8 targets)
+Target 'IKFashionHubUITests' in project 'IKFashionHub' (no dependencies)
+Target 'IKFashionHubUITests' in project 'IKFashionHub'
+➜ Explicit dependency on target 'IKFashionHub' in project 'IKFashionHub'
+Target 'IKFashionHubUITests' in project 'IKFashionHub'
+➜ Explicit dependency on target 'IKFashionHub' in project 'IKFashionHub'
+Target 'IKFashionHubTests' in project 'IKFashionHub' (no dependencies)
+Target 'IKFashionHubTests' in project 'IKFashionHub'
+➜ Explicit dependency on target 'IKFashionHub' in project 'IKFashionHub'
+Target 'IKFashionHubTests' in project 'IKFashionHub'
+➜ Explicit dependency on target 'IKFashionHub' in project 'IKFashionHub'
+Target 'IKFashionHub' in project 'IKFashionHub' (no dependencies)
+Target 'IKFashionHub' in project 'IKFashionHub' (no dependencies)

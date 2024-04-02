@@ -1,0 +1,24 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Components/CartItemCard.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Failed to load image"
+      },
+      {
+        "comment": "",
+        "key": "%.2f $"
+      },
+      {
+        "comment": "",
+        "key": "Qty: %lld"
+      },
+      {
+        "comment": "",
+        "key": "Delete"
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,36 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/Previews/IKFashionHub/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/UserProfileView.1.preview-thunk.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Loading..."
+      },
+      {
+        "comment": "",
+        "key": "Name: %@"
+      },
+      {
+        "comment": "",
+        "key": "Email: %@"
+      },
+      {
+        "comment": "",
+        "key": "Address: %@"
+      },
+      {
+        "comment": "",
+        "key": "Telephone:%@"
+      },
+      {
+        "comment": "",
+        "key": "User Profile"
+      },
+      {
+        "comment": "",
+        "key": "Edit Profile"
+      }
+    ]
+  },
+  "version": 1
+}

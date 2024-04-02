@@ -1,0 +1,56 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/Previews/IKFashionHub/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/RegisterView.1.preview-thunk.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Register"
+      },
+      {
+        "comment": "",
+        "key": "Full Name"
+      },
+      {
+        "comment": "",
+        "key": "Telephone Number"
+      },
+      {
+        "comment": "",
+        "key": "Email"
+      },
+      {
+        "comment": "",
+        "key": "Address"
+      },
+      {
+        "comment": "",
+        "key": "Password"
+      },
+      {
+        "comment": "",
+        "key": "Confirm Password"
+      },
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "Cancel"
+      },
+      {
+        "comment": "",
+        "key": "Success"
+      },
+      {
+        "comment": "",
+        "key": "Registration successful"
+      },
+      {
+        "comment": "",
+        "key": "OK"
+      }
+    ]
+  },
+  "version": 1
+}

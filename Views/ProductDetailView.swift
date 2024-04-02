@@ -8,24 +8,18 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    //@ObservedObject var viewModel: ClothViewModel
-    //@State var productId: Int
-    
-    //    init(productId: Int) {
-    //        self.productId = productId
-    //        self.viewModel = ClothViewModel()
-    //        self.viewModel.fetchData(id: productId)
-    //    }
+    @State var getSelection : String = ""
+    @StateObject var productVM = ClothViewModel()
+    @State private var showAlert = false
     @State private var selectedSize: String? = nil
     @State private var quantity: Int = 1 
+    var userID: String
     
     var clothingDM : ClothDataModel
     
     var body: some View {
         NavigationView{
             VStack {
-                //if let product = viewModel.clothingDM.first {
-                // Product Image
                 if let imageURL = URL(string: clothingDM.image),
                    let imageData = try? Data(contentsOf: imageURL),
                    let uiImage = UIImage(data: imageData) {
@@ -53,50 +47,100 @@ struct ProductDetailView: View {
                 
                 Text("\(clothingDM.price, specifier: "%.2f")LKR")
                     .font(.headline)
-                // Add additional views for displaying other product details
-                //} else {
-                //ProgressView()
-                //}
+                
                 HStack{
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: [GridItem(.flexible())], spacing: 3) {
-                        ForEach(["Small", "Medium", "Large", "XL"], id: \.self) { size in
-                            Button(action: {
-                                selectedSize = size
-                            }) {
-                                Text(size)
-                                    .font(.body)
-                                    .padding(.horizontal, 15)
-                                    .padding(.vertical, 10)
-                                    .background(selectedSize == size ? Color.blue : Color.gray)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
-                            }
-                        }
-                    }
-                            HStack{  Stepper(value: $quantity, in: 1...10) {
-                                Text("Quantity: \(quantity)")
-                            }
-                            .padding(.horizontal)
-                                
-                                // Add to Cart Button
-                                Button(action: {
-                                    // Add to cart functionality
-                                }, label: {
-                                    Text("Add to Cart")
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        .background(Color.blue)
-                                        .cornerRadius(10)
-                                        
-                                })
-                                .frame()
-                                //.padding(.top)
-                                .padding(.bottom)
-                            }
+                    Spacer()
+                    Button(action: {
+                        getSelection = "Small"
+                    }, label: {
+                        Rectangle()
                             
-                        }
+                            .frame(width: 80, height: 40)
+                            .foregroundStyle(getSelection == "Small" ? Color.gray : Color.black)
+                            .overlay {
+                                Text("Small")
+                            }
+                    })
+                    Button(action: {
+                        getSelection = "Medium"
+                    }, label: {
+                        Rectangle()
+                            .frame(width: 80, height: 40)
+                            .foregroundStyle(getSelection == "Medium" ? Color.gray : Color.black)
+                            .overlay {
+                                Text("Medium")
+                            }
+                    })
+                    Button(action: {
+                        getSelection = "Large"
+                    }, label: {
+                        Rectangle()
+                            
+                            .frame(width: 80, height: 40)
+                            .foregroundStyle(getSelection == "Large" ? Color.gray : Color.black)
+                            .overlay {
+                                Text("Large")
+                            }
+                    })
+                    Button(action: {
+                        getSelection = "XL"
+                    }, label: {
+                        Rectangle()
+                            .frame(width: 80, height: 40)
+                            .foregroundStyle(getSelection == "XL" ? Color.gray : Color.black)
+                            .overlay {
+                                Text("XL")
+                            }
+                    })
+                    
+                    
+                }
+                Spacer()
+
+                HStack{
+                Stepper(value: $quantity, in: 1...10) {
+                    Text("\(quantity)")
+                        .font(.system(size: 13))
+                }
+            }
+                if($productVM.showSuccess){
+                    Text("Added to cart")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.green)
+                }
+                
+                if(productVM.showError){
+                    Text("Unable to Add select color or quantity")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.red)
+                }
+                
+                Button(action:{
+                    if userID.isEmpty || userID == "" {
+                        showAlert = true
+                    } else {
+                        productVM.addToCart(itemID: "\(clothingDM.id)", userID: userID, size: getSelection, qty: "\(quantity)")
+                        showAlert = false
                     }
+                },label: {
+                    HStack{
+                        Text("ADD TO CART")
+                            .foregroundStyle(.white).bold()
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width - 32,height:48)
+                })
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Unable to Add to Cart"),
+                        message: Text("Make sure to login before add Favourites")
+                    )
+                }
+                .background(Color(.systemBlue))
+                .cornerRadius(50)
+                .padding(.top,24)
+                Spacer()
+
                 }
             }
         .padding()

@@ -1,0 +1,18 @@
+"/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Components/CartIcon.swift":
+  dependencies: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/CartIcon.d"
+  object: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/CartIcon.o"
+  const-values: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/CartIcon.swiftconstvalues"
+  swift-dependencies: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/CartIcon.swiftdeps"
+  diagnostics: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/CartIcon.dia"
+"/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/ViewModels/OrderViewModel.swift":
+  diagnostics: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/OrderViewModel.dia"
+  object: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/OrderViewModel.o"
+  dependencies: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/OrderViewModel.d"
+  const-values: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/OrderViewModel.swiftconstvalues"
+  swift-dependencies: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/OrderViewModel.swiftdeps"
+"/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Models/RegisterModel.swift":
+  object: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/RegisterModel.o"
+  dependencies: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/RegisterModel.d"
+  const-values: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/RegisterModel.swiftconstvalues"
+  swift-dependencies: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/RegisterModel.swiftdeps"
+  diagnostics: "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/RegisterModel.dia"

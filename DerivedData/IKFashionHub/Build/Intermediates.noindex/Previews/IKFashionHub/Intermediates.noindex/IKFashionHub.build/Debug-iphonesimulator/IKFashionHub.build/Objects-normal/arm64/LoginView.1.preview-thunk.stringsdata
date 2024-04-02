@@ -1,0 +1,32 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/Previews/IKFashionHub/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/LoginView.1.preview-thunk.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "Sign out here"
+      },
+      {
+        "comment": "",
+        "key": "Email"
+      },
+      {
+        "comment": "",
+        "key": "Password"
+      },
+      {
+        "comment": "",
+        "key": "SIGN IN"
+      },
+      {
+        "comment": "",
+        "key": "Register"
+      }
+    ]
+  },
+  "version": 1
+}

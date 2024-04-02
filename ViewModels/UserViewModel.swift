@@ -2,7 +2,6 @@
 //  UserViewModel.swift
 //  IKFashionHub
 //
-//  Created by Sajana Rupasinghe on 2024-03-31.
 //
 
 import Foundation
@@ -90,7 +89,7 @@ class UserViewModel : ObservableObject{
     }
     
     func fetchUser(email: String) {
-        guard let url = URL(string: "http://localhost:3000/api/users/\(email)") else { return }
+        guard let url = URL(string: "http://localhost:3030/api/users/\(email)") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {

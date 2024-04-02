@@ -1,0 +1,36 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Views/UserProfileView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Loading..."
+      },
+      {
+        "comment": "",
+        "key": "User Profile"
+      },
+      {
+        "comment": "",
+        "key": "Name: %@"
+      },
+      {
+        "comment": "",
+        "key": "Email: %@"
+      },
+      {
+        "comment": "",
+        "key": "Address: %@"
+      },
+      {
+        "comment": "",
+        "key": "Telephone:%@"
+      },
+      {
+        "comment": "",
+        "key": "Edit Profile"
+      }
+    ]
+  },
+  "version": 1
+}

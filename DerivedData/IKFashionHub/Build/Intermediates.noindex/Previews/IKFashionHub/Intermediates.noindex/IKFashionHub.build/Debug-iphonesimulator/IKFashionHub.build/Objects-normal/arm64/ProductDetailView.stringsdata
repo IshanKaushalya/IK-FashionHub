@@ -1,0 +1,40 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Views/ProductDetailView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Product Detail"
+      },
+      {
+        "comment": "",
+        "key": "%.2fLKR"
+      },
+      {
+        "comment": "",
+        "key": "Description: %@"
+      },
+      {
+        "comment": "",
+        "key": "Small"
+      },
+      {
+        "comment": "",
+        "key": "Medium"
+      },
+      {
+        "comment": "",
+        "key": "Large"
+      },
+      {
+        "comment": "",
+        "key": "XL"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      }
+    ]
+  },
+  "version": 1
+}

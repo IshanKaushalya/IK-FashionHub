@@ -8,7 +8,9 @@ struct LoginView: View {
     @State private var showName: String = ""
     @StateObject var userVM = UserViewModel()
     @StateObject var registerVM = RegisterViewModel()
-//    @ObservedObject var viewModel = UserViewModel()
+    @State private var showingRegister = false
+    
+
     
     var body: some View {
         NavigationStack {
@@ -16,7 +18,7 @@ struct LoginView: View {
                 NavigationStack {
                     ZStack {
                         VStack {
-                            Image("user")
+                            Image("sampleMen")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 120, height: 120)
@@ -139,31 +141,28 @@ struct LoginView: View {
                 .cornerRadius(20)
                 .padding(.top)
                 
+                
+                
                 Button(action: {
-                    
+                    showingRegister = true
                     
                 }, label: {
                     HStack {
-                        Text("REGISTER")
+                        Text("Register")
                             .foregroundStyle(.white).bold()
                     }
                     .foregroundColor(.white)
                     .frame(width: 300)
                     .frame(height: 50)
+                    .background(NavigationLink("", destination: RegisterView(viewModel: registerVM), isActive: $showingRegister))
                 })
                 .background(Color(.red))
                 .cornerRadius(20)
                 .padding(.top)
                 
-//                NavigationLink(destination: UserRegisterView()) {
-//                    HStack(spacing: 3) {
-//                        Text("Not Registered Yet?")
-//                        Text("Register Now")
-//                            .bold()
-//                    }
-//                    .font(.system(size: 16))
-//                    .padding(.top)
-//                }
+                
+                
+
             }
             
             

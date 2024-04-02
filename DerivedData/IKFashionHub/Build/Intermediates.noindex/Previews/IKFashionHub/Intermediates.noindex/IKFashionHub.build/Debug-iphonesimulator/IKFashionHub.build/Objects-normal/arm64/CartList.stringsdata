@@ -1,0 +1,20 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Components/CartList.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Failed to load image"
+      },
+      {
+        "comment": "",
+        "key": "Delete"
+      },
+      {
+        "comment": "",
+        "key": "$%lf"
+      }
+    ]
+  },
+  "version": 1
+}

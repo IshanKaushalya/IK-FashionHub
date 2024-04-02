@@ -1,0 +1,40 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/Views/HomeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "IKFashionHub"
+      },
+      {
+        "comment": "",
+        "key": "Hello Welcome!"
+      },
+      {
+        "comment": "",
+        "key": "The IKFashionHub"
+      },
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "Search products"
+      },
+      {
+        "comment": "",
+        "key": "Men"
+      },
+      {
+        "comment": "",
+        "key": "Women"
+      },
+      {
+        "comment": "",
+        "key": "Sort"
+      }
+    ]
+  },
+  "version": 1
+}

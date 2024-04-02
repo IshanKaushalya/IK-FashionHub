@@ -8,9 +8,9 @@
 import Foundation
 
 struct UserDataModel: Codable {
-    var userID: Int
+    //var userID: Int
     var fullName: String
-    var telno: Int
+    var telno: String
     var email: String
     var address: String
     var password: String

@@ -1,0 +1,40 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/Previews/IKFashionHub/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/HomeView.1.preview-thunk.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "IKFashionHub"
+      },
+      {
+        "comment": "",
+        "key": "Hello Welcome!"
+      },
+      {
+        "comment": "",
+        "key": "The IKFashionHub"
+      },
+      {
+        "comment": "",
+        "key": "Search products"
+      },
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "Men"
+      },
+      {
+        "comment": "",
+        "key": "Women"
+      },
+      {
+        "comment": "",
+        "key": "Sort"
+      }
+    ]
+  },
+  "version": 1
+}

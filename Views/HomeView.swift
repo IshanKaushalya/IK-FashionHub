@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var cartVM : CartVeiwModel = CartVeiwModel()
+    @StateObject var cartVM : CartViewModel = CartViewModel()
     @StateObject var productVM : ClothViewModel = ClothViewModel()
+    @StateObject var userVM : UserViewModel = UserViewModel()
+
     @State private var showMenOptions = false
     @State private var showWomenOptions = false
     @State private var searchText = ""
@@ -27,122 +29,161 @@ struct HomeView: View {
         Text("IKFashionHub").font(.title).foregroundColor(Color.blue).padding(10)
             .bold()
         
+        HStack{//the welcome note and the cart icon
+
+
+                RoundedRectangle(cornerRadius: 0)
+                    .frame(width: 330,height: 40)
+                    .padding(.horizontal,10)
+                    .opacity(0)
+                 .overlay{
+                        HStack{
+                            HStack{
+                                VStack{
+                                   
+                                    Text("Hello Welcome!").font(.custom("SF Armenian",size: 15))
+                                    if userVM.authenticated {
+                                        Text(userVM.username).bold()
+                                    } else {
+                                        Text("The IKFashionHub").bold()
+                                    }
+                                }
+                            }
+                            Spacer()
+                            NavigationLink(destination:{
+                                //EmptyView()
+                                CartView()
+                                    .toolbar(.hidden, for:.tabBar)
+                            },label: {
+                                CartButton(numberOfProducts: cartVM.items.count)
+                            })
+                        }
+                    }
+
+            }
+            .onAppear{
+                if userVM.authenticated{
+                    cartVM.fetchCartData(forEmail: userVM.username)
+                }
+            }
+        
         
         NavigationView {
-            
-            ScrollView {
-                
-                // Search Bar
-                TextField("Search products", text: $searchText)
-                    .padding()
-                    .background(Color(.systemGray5))
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-                    .onChange(of: searchText, perform: { value in
-                        
-                        productVM.fetchData(forQuery: searchText)
-                    })
-                
-                
-                HStack{
-                    HStack {
-                        Button("Men") {
-                            productVM.fetchData(forCategory: "Men")
-                            showMenOptions.toggle()
-                            showWomenOptions = false
-                        }
+
+            HStack{
+                ScrollView {
+                    
+                    // Search Bar
+                    TextField("Search products", text: $searchText)
                         .padding()
-                        .background(Color.black)
-                        .foregroundColor(.white)
+                        .background(Color(.systemGray5))
                         .cornerRadius(10)
-                        
-                        
-                        Button("Women") {
-                            productVM.fetchData(forCategory: "Women")
-                            showWomenOptions.toggle()
-                            showMenOptions = false
+                        .padding(.horizontal)
+                        .onChange(of: searchText, perform: { value in
+                            
+                            productVM.fetchData(forQuery: searchText)
+                        })
+                    
+                    
+                    HStack{
+                        HStack {
+                            Button("Men") {
+                                productVM.fetchData(forCategory: "Men")
+                                showMenOptions.toggle()
+                                showWomenOptions = false
+                            }
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            
+                            
+                            Button("Women") {
+                                productVM.fetchData(forCategory: "Women")
+                                showWomenOptions.toggle()
+                                showMenOptions = false
+                            }
+                            .padding()
+                            .background(Color.pink)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                         }
-                        .padding()
-                        .background(Color.pink)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    }
-                    VStack {
-                        Spacer()
-                        Button(action: {
-                            isSortingDescending.toggle()
-                            productVM.fetchSortedData(order: isSortingDescending ? "desc" : "asc")
-                        }) {
-                            VStack {
-                                Image(systemName: isSortingDescending ? "arrow.down" : "arrow.up")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 24))
-                                    .padding()
-                                Text("Sort")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 12))
+                        VStack {
+                            Spacer()
+                            Button(action: {
+                                isSortingDescending.toggle()
+                                productVM.fetchSortedData(order: isSortingDescending ? "desc" : "asc")
+                            }) {
+                                VStack {
+                                    Image(systemName: isSortingDescending ? "arrow.down" : "arrow.up")
+                                        .foregroundColor(.black)
+                                        .font(.system(size: 24))
+                                        .padding()
+                                    Text("Sort")
+                                        .foregroundColor(.black)
+                                        .font(.system(size: 12))
+                                }
                             }
                         }
-                    }
-                    .padding(.leading, 150)
-                    
-                }
-                
-                
-                if showMenOptions {
-                    HStack {
-                        TagButton(title: "Tops", action: {
-                            productVM.fetchData(forSubcategory: "Tops", inCategory: "Men")
-                        })
-                        TagButton(title: "Bottoms", action: {
-                            productVM.fetchData(forSubcategory: "Bottoms", inCategory: "Men")
-                        })
+                        .padding(.leading, 150)
                         
                     }
-                }
-                
-                if showWomenOptions {
-                    HStack {
-                        TagButton(title: "Party wear", action: {
-                            productVM.fetchData(forSubcategory: "Party wear", inCategory: "Women")
-                        })
-                        TagButton(title: "Office wear", action: {
-                            productVM.fetchData(forSubcategory: "Office wear", inCategory: "Women")
-                        })
-                        
-                    }
-                }
-                
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(productVM.clothingDM) { productData in
-                        ClothingIcon(clothingDM: productData)
-                    }.padding()
                     
-                }.navigationTitle(Text(""))
-                
-                
-                //                    .toolbar {
-                //
-                //                        NavigationLink {
-                //                             CartVeiw()
-                //                              .environmentObject(cartVM)
-                //                        } label: {
-                //                            CartIcon(numberOfProduct: cartVM.products.count)
-                //
-                //                        }
-                //
-                //                        NavigationLink {
-                //                            // UserView()
-                //                              .environmentObject(cartVM)
-                //                        } label: {
-                //                            Image(systemName: "person.circle")
-                //
-                //                        }
-                //                    }
-                
-                
-            }.navigationViewStyle(StackNavigationViewStyle())
-            
+                    
+                    if showMenOptions {
+                        HStack {
+                            TagButton(title: "Tops", action: {
+                                productVM.fetchData(forSubcategory: "Tops", inCategory: "Men")
+                            })
+                            TagButton(title: "Bottoms", action: {
+                                productVM.fetchData(forSubcategory: "Bottoms", inCategory: "Men")
+                            })
+                            
+                        }
+                    }
+                    
+                    if showWomenOptions {
+                        HStack {
+                            TagButton(title: "Party wear", action: {
+                                productVM.fetchData(forSubcategory: "Party wear", inCategory: "Women")
+                            })
+                            TagButton(title: "Office wear", action: {
+                                productVM.fetchData(forSubcategory: "Office wear", inCategory: "Women")
+                            })
+                            
+                        }
+                    }
+                    
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(productVM.clothingDM) { productData in
+                            ClothingIcon(clothingDM: productData)
+                        }.padding()
+                        
+                    }.navigationTitle(Text(""))
+                    
+                    
+                    //                    .toolbar {
+                    //
+                    //                        NavigationLink {
+                    //                             CartVeiw()
+                    //                              .environmentObject(cartVM)
+                    //                        } label: {
+                    //                            CartIcon(numberOfProduct: cartVM.products.count)
+                    //
+                    //                        }
+                    //
+                    //                        NavigationLink {
+                    //                            // UserView()
+                    //                              .environmentObject(cartVM)
+                    //                        } label: {
+                    //                            Image(systemName: "person.circle")
+                    //
+                    //                        }
+                    //                    }
+                    
+                    
+                }.navigationViewStyle(StackNavigationViewStyle())
+            }
             
         }
         

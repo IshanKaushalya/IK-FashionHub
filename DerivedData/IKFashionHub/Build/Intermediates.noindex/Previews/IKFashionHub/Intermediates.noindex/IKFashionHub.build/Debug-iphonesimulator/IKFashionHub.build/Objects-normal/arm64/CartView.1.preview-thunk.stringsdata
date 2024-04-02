@@ -1,0 +1,40 @@
+{
+  "source": "/Users/navodyasajanarupasinghe/Downloads/IK-FashionHub/DerivedData/IKFashionHub/Build/Intermediates.noindex/Previews/IKFashionHub/Intermediates.noindex/IKFashionHub.build/Debug-iphonesimulator/IKFashionHub.build/Objects-normal/arm64/CartView.1.preview-thunk.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Cart"
+      },
+      {
+        "comment": "",
+        "key": "Your favourites is Empty!"
+      },
+      {
+        "comment": "",
+        "key": "Login to check your Cart!"
+      },
+      {
+        "comment": "",
+        "key": "Total"
+      },
+      {
+        "comment": "",
+        "key": "Discount"
+      },
+      {
+        "comment": "",
+        "key": "$ 0.00"
+      },
+      {
+        "comment": "",
+        "key": "Amount"
+      },
+      {
+        "comment": "",
+        "key": "CHECKOUT"
+      }
+    ]
+  },
+  "version": 1
+}
