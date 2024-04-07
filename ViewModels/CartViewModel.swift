@@ -40,6 +40,7 @@ class CartViewModel : ObservableObject {
             }
         }.resume()
     }
+    //done
     
     func deleteCartItem(ForItemID id: String) {
         guard let url = URL(string: "http://localhost:3030/api/cart/\(id)") else {
@@ -70,47 +71,47 @@ class CartViewModel : ObservableObject {
     private func calculateTotal() {
         var totalAmount: Double = 0.0
         for item in items {
-            totalAmount += item.prod_price * Double(item.qty)
+            totalAmount += item.price * Double(item.qty)
         }
         self.total = totalAmount
     }
     
-//    func placeOrder(email: String,total: String){
-//        let currentDate = Date()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .long
-//        let date = dateFormatter.string(from: currentDate)
-//        
-//        guard let url = URL(string: "http://localhost:3030/api/order") else {
-//            print("Invalid URL")
-//            return
-//        }
-//        let orderData = OrderDataModel(email: email, total: total, date: date)
-//        guard let jsonData = try? JSONEncoder().encode(orderData) else {
-//            self.showError = true
-//            self.errorMessage = "Failed to encode order data"
-//            return
-//        }
-//        
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.httpBody = jsonData
-//        
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-//                self.showError = true
-//                self.errorMessage = "Error: \(error?.localizedDescription ?? "Unknown error")"
-//                self.errorMessage = "something went wrong"
-//                return
-//            }
-//            
-//            if httpResponse.statusCode == 200 {
-//                self.showSuccess = true
-//                
-//            }
-//        }.resume()
-//    }
+    func placeOrder(email: String,total: String){
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        let date = dateFormatter.string(from: currentDate)
+        
+        guard let url = URL(string: "http://localhost:3030/api/order") else {
+            print("Invalid URL")
+            return
+        }
+        let orderData = OrderDataModel(email: email, total: total, date: date)
+        guard let jsonData = try? JSONEncoder().encode(orderData) else {
+            self.showError = true
+            self.errorMessage = "Failed to encode order data"
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                self.showError = true
+                self.errorMessage = "Error: \(error?.localizedDescription ?? "Unknown error")"
+                self.errorMessage = "something went wrong"
+                return
+            }
+            
+            if httpResponse.statusCode == 200 {
+                self.showSuccess = true
+                
+            }
+        }.resume()
+    }
 //    
 //    func placeOrderItem(order_id: Int,item_id: Int,size: String, qty: Int){
 //        guard let url = URL(string: "http://localhost:3030/api/order/add-items") else {

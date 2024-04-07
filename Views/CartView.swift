@@ -42,12 +42,12 @@ struct CartView: View {
                         
                     .onAppear{
                             if userVM.authenticated{
-                                cartVM.fetchCartData(forEmail: userVM.username)
+                                cartVM.fetchCartData(forEmail: "ABC")
                             }
                         }
                         .onSubmit {
                             if userVM.authenticated{
-                                cartVM.fetchCartData(forEmail: userVM.username)
+                                cartVM.fetchCartData(forEmail: "ABC")
                             }
                         }
                         .frame(width: 370,height: 500)
@@ -77,44 +77,40 @@ struct CartView: View {
                         //Text(cartVM.latestOrderId)
                     }.padding(.horizontal,20)
                     
-                    Button(action :{
-//                        cartVM.placeOrder(email: userVM.username, total: "\(cartVM.total)")
-//                        cartVM.deleteCartItems(forEmail: userVM.username)
-//                        for data in cartVM.items {
-//                            cartVM.placeOrderItem(order_id: 0, item_id: data.id, size: data.size, qty: data.qty)
-//                            cartVM.removeFromCart(item: data)
-                        
-                    }, label: {
+                    Button{
+                        cartVM.placeOrder(email: userVM.username, total: "\(cartVM.total)")
+                        cartVM.deleteCartItems(forEmail: userVM.username)
+                        for data in cartVM.items {
+                            //cartVM.placeOrderItem(order_id: 0, item_id: data.id, size: data.size, qty: data.qty)
+                            cartVM.removeFromCart(item: data)
+                        }
+                    } label: {
                         HStack{
                             Text("CHECKOUT")
                                 .foregroundStyle(.white).bold()
                             Image(systemName: "arrow.forward")
                             
                         }
-                        
                         .foregroundColor(.white)
                         .frame(width: UIScreen.main.bounds.width - 32,height:48)
                     }
-                           )
-                           
                     .background(Color(.systemBlue))
                     .cornerRadius(50)
-//                    .alert(isPresented: $cartVM.showError) {
-//                        Alert(
-//                            title: Text("Unable to Place the Order"),
-//                            message: Text("Please try again later")
-//                        )
-//                    }
-//                    .alert(isPresented: $cartVM.showSuccess) {
-//                        Alert(
-//                            title: Text("Your Order"),
-//                            message: Text("Order Placed Successfully")
-//                        )
-//                    }
-//                    
-//                    Spacer()
+                    .alert(isPresented: $cartVM.showError) {
+                        Alert(
+                            title: Text("Unable to Place the Order"),
+                            message: Text("Please try again later")
+                        )
+                    }
+                    .alert(isPresented: $cartVM.showSuccess) {
+                        Alert(
+                            title: Text("Your Order"),
+                            message: Text("Order Placed Successfully")
+                        )
+                    }
+                    
+                    Spacer()
                 }
-                           
                 .padding(.top)
                 .padding(.bottom)
                 .preferredColorScheme(.light)

@@ -10,8 +10,9 @@ import SwiftUI
 struct ClothingIcon: View {
     //@State private var refresh = false
     var clothingDM : ClothDataModel 
+    var userVM: UserViewModel
     var body: some View {
-        NavigationLink(destination: ProductDetailView( clothingDM: clothingDM)){
+        NavigationLink(destination: ProductDetailView( userID: userVM.username, clothingDM: clothingDM)){
             ZStack(alignment:.topTrailing){
                 ZStack(alignment:.bottom){
                     let imageURL = URL(string: clothingDM.image)!

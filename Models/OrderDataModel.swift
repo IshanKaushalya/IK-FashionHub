@@ -8,11 +8,9 @@
 import Foundation
 
 struct OrderDataModel: Codable {
-    //var id: Int
-    
-    var date: String
-    var total: Double
     var email: String
+    var total: String
+    var date: String
 }
 
 struct OrderDataRetrieveModel: Codable{

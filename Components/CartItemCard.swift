@@ -18,7 +18,7 @@ struct CartItemCard : View {
     
     var body: some View{
         HStack{
-            let imageURL = URL(string: cartDM.prod_image)!
+            let imageURL = URL(string: cartDM.image)!
             AsyncImage(url: imageURL) { phase in
                 switch phase {
                 case .empty:
@@ -57,9 +57,9 @@ struct CartItemCard : View {
                 }
             }
             VStack{
-                Text(cartDM.prod_name)
+                Text(cartDM.productName)
                     .font(.system(size: 14, weight: .bold))
-                Text("\(cartDM.prod_price, specifier: "%.2f") $")
+                Text("\(cartDM.price, specifier: "%.2f") $")
                 Text("Qty: \(cartDM.qty)")
             }
             .padding()

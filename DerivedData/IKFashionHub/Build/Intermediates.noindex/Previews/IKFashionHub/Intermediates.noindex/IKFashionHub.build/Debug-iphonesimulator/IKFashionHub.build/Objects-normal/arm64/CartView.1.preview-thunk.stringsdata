@@ -33,6 +33,22 @@
       {
         "comment": "",
         "key": "CHECKOUT"
+      },
+      {
+        "comment": "",
+        "key": "Unable to Place the Order"
+      },
+      {
+        "comment": "",
+        "key": "Please try again later"
+      },
+      {
+        "comment": "",
+        "key": "Your Order"
+      },
+      {
+        "comment": "",
+        "key": "Order Placed Successfully"
       }
     ]
   },

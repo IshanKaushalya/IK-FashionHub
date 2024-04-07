@@ -25,22 +25,23 @@ struct HomeView: View {
     
     
     var body: some View {
-        
-        Text("IKFashionHub").font(.title).foregroundColor(Color.blue).padding(10)
-            .bold()
-        
-        HStack{//the welcome note and the cart icon
-
-
+        NavigationStack{
+            
+            Text("IKFashionHub").font(.title).foregroundColor(Color.blue).padding(10)
+                .bold()
+            
+            HStack{//the welcome note and the cart icon
+                
+                
                 RoundedRectangle(cornerRadius: 0)
                     .frame(width: 330,height: 40)
                     .padding(.horizontal,10)
                     .opacity(0)
-                 .overlay{
+                    .overlay{
                         HStack{
                             HStack{
                                 VStack{
-                                   
+                                    
                                     Text("Hello Welcome!").font(.custom("SF Armenian",size: 15))
                                     if userVM.authenticated {
                                         Text(userVM.username).bold()
@@ -53,198 +54,206 @@ struct HomeView: View {
                             NavigationLink(destination:{
                                 //EmptyView()
                                 CartView()
-                                    .toolbar(.hidden, for:.tabBar)
+                                //.toolbar(.hidden, for:.tabBar)
                             },label: {
                                 CartButton(numberOfProducts: cartVM.items.count)
                             })
+                            NavigationLink(destination: {
+                                LoginView()
+                            }, label: {
+                                Image(systemName: "person.circle")
+                                    .padding()
+                            })
+                            
                         }
                     }
-
+                
             }
             .onAppear{
                 if userVM.authenticated{
                     cartVM.fetchCartData(forEmail: userVM.username)
                 }
             }
-        
-        
-        NavigationView {
-
-            HStack{
-                ScrollView {
-                    
-                    // Search Bar
-                    TextField("Search products", text: $searchText)
-                        .padding()
-                        .background(Color(.systemGray5))
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                        .onChange(of: searchText, perform: { value in
-                            
-                            productVM.fetchData(forQuery: searchText)
-                        })
-                    
-                    
-                    HStack{
-                        HStack {
-                            Button("Men") {
-                                productVM.fetchData(forCategory: "Men")
-                                showMenOptions.toggle()
-                                showWomenOptions = false
-                            }
+            
+            
+            NavigationView {
+                
+                HStack{
+                    ScrollView {
+                        
+                        // Search Bar
+                        TextField("Search products", text: $searchText)
                             .padding()
-                            .background(Color.black)
-                            .foregroundColor(.white)
+                            .background(Color(.systemGray5))
                             .cornerRadius(10)
-                            
-                            
-                            Button("Women") {
-                                productVM.fetchData(forCategory: "Women")
-                                showWomenOptions.toggle()
-                                showMenOptions = false
+                            .padding(.horizontal)
+                            .onChange(of: searchText, perform: { value in
+                                
+                                productVM.fetchData(forQuery: searchText)
+                            })
+                        
+                        
+                        HStack{
+                            HStack {
+                                Button("Men") {
+                                    productVM.fetchData(forCategory: "Men")
+                                    showMenOptions.toggle()
+                                    showWomenOptions = false
+                                }
+                                .padding()
+                                .background(Color.black)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                
+                                
+                                Button("Women") {
+                                    productVM.fetchData(forCategory: "Women")
+                                    showWomenOptions.toggle()
+                                    showMenOptions = false
+                                }
+                                .padding()
+                                .background(Color.pink)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
                             }
-                            .padding()
-                            .background(Color.pink)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                        }
-                        VStack {
-                            Spacer()
-                            Button(action: {
-                                isSortingDescending.toggle()
-                                productVM.fetchSortedData(order: isSortingDescending ? "desc" : "asc")
-                            }) {
-                                VStack {
-                                    Image(systemName: isSortingDescending ? "arrow.down" : "arrow.up")
-                                        .foregroundColor(.black)
-                                        .font(.system(size: 24))
-                                        .padding()
-                                    Text("Sort")
-                                        .foregroundColor(.black)
-                                        .font(.system(size: 12))
+                            VStack {
+                                Spacer()
+                                Button(action: {
+                                    isSortingDescending.toggle()
+                                    productVM.fetchSortedData(order: isSortingDescending ? "desc" : "asc")
+                                }) {
+                                    VStack {
+                                        Image(systemName: isSortingDescending ? "arrow.down" : "arrow.up")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 24))
+                                            .padding()
+                                        Text("Sort")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 12))
+                                    }
                                 }
                             }
-                        }
-                        .padding(.leading, 150)
-                        
-                    }
-                    
-                    
-                    if showMenOptions {
-                        HStack {
-                            TagButton(title: "Tops", action: {
-                                productVM.fetchData(forSubcategory: "Tops", inCategory: "Men")
-                            })
-                            TagButton(title: "Bottoms", action: {
-                                productVM.fetchData(forSubcategory: "Bottoms", inCategory: "Men")
-                            })
+                            .padding(.leading, 150)
                             
                         }
-                    }
-                    
-                    if showWomenOptions {
-                        HStack {
-                            TagButton(title: "Party wear", action: {
-                                productVM.fetchData(forSubcategory: "Party wear", inCategory: "Women")
-                            })
-                            TagButton(title: "Office wear", action: {
-                                productVM.fetchData(forSubcategory: "Office wear", inCategory: "Women")
-                            })
-                            
-                        }
-                    }
-                    
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(productVM.clothingDM) { productData in
-                            ClothingIcon(clothingDM: productData)
-                        }.padding()
                         
-                    }.navigationTitle(Text(""))
-                    
-                    
-                    //                    .toolbar {
-                    //
-                    //                        NavigationLink {
-                    //                             CartVeiw()
-                    //                              .environmentObject(cartVM)
-                    //                        } label: {
-                    //                            CartIcon(numberOfProduct: cartVM.products.count)
-                    //
-                    //                        }
-                    //
-                    //                        NavigationLink {
-                    //                            // UserView()
-                    //                              .environmentObject(cartVM)
-                    //                        } label: {
-                    //                            Image(systemName: "person.circle")
-                    //
-                    //                        }
-                    //                    }
-                    
-                    
-                }.navigationViewStyle(StackNavigationViewStyle())
+                        
+                        if showMenOptions {
+                            HStack {
+                                TagButton(title: "Tops", action: {
+                                    productVM.fetchData(forSubcategory: "Tops", inCategory: "Men")
+                                })
+                                TagButton(title: "Bottoms", action: {
+                                    productVM.fetchData(forSubcategory: "Bottoms", inCategory: "Men")
+                                })
+                                
+                            }
+                        }
+                        
+                        if showWomenOptions {
+                            HStack {
+                                TagButton(title: "Party wear", action: {
+                                    productVM.fetchData(forSubcategory: "Party wear", inCategory: "Women")
+                                })
+                                TagButton(title: "Office wear", action: {
+                                    productVM.fetchData(forSubcategory: "Office wear", inCategory: "Women")
+                                })
+                                
+                            }
+                        }
+                        
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(productVM.clothingDM) { productData in
+                                ClothingIcon(clothingDM: productData, userVM: userVM)
+                            }.padding()
+                            
+                        }.navigationTitle(Text(""))
+                        
+                        
+                        //                    .toolbar {
+                        //
+                        //                        NavigationLink {
+                        //                             CartVeiw()
+                        //                              .environmentObject(cartVM)
+                        //                        } label: {
+                        //                            CartIcon(numberOfProduct: cartVM.products.count)
+                        //
+                        //                        }
+                        //
+                        //                        NavigationLink {
+                        //                            // UserView()
+                        //                              .environmentObject(cartVM)
+                        //                        } label: {
+                        //                            Image(systemName: "person.circle")
+                        //
+                        //                        }
+                        //                    }
+                        
+                        
+                    }.navigationViewStyle(StackNavigationViewStyle())
+                }
+                
             }
             
+            //        VStack {
+            //
+            //                    HStack {
+            //                        Spacer()
+            //
+            //                        Button(action: {
+            //
+            //                        }) {
+            //                            VStack {
+            //                                Image(systemName: "house.fill")
+            //                                    .foregroundColor(.blue)
+            //                                    .font(.system(size: 24))
+            //                                    .padding()
+            //                                Text("Home")
+            //                                    .foregroundColor(.blue)
+            //                                    .font(.system(size: 14))
+            //                            }
+            //                        }
+            //
+            //                        Spacer()
+            //
+            //                        Button(action: {
+            //
+            //                        }) {
+            //                            VStack {
+            //                                Image(systemName: "shippingbox.fill")
+            //                                    .foregroundColor(.red)
+            //                                    .font(.system(size: 24))
+            //                                    .padding()
+            //                                Text("Orders")
+            //                                    .foregroundColor(.red)
+            //                                    .font(.system(size: 14))
+            //                            }
+            //                        }
+            //
+            //                        Spacer()
+            //
+            //                        Button(action: {
+            //
+            //                        }) {
+            //                            VStack {
+            //                                Image(systemName: "person.fill")
+            //                                    .foregroundColor(.green)
+            //                                    .font(.system(size: 24))
+            //                                    .padding()
+            //                                Text("Sign  Out")
+            //                                    .foregroundColor(.green)
+            //                                    .font(.system(size: 14))
+            //                            }
+            //                        }
+            //
+            //                        Spacer()
+            //                    }
+            //
+            //                    .background(Color.white)
+            //
+            //               }
+            
         }
-        
-        //        VStack {
-        //
-        //                    HStack {
-        //                        Spacer()
-        //
-        //                        Button(action: {
-        //
-        //                        }) {
-        //                            VStack {
-        //                                Image(systemName: "house.fill")
-        //                                    .foregroundColor(.blue)
-        //                                    .font(.system(size: 24))
-        //                                    .padding()
-        //                                Text("Home")
-        //                                    .foregroundColor(.blue)
-        //                                    .font(.system(size: 14))
-        //                            }
-        //                        }
-        //
-        //                        Spacer()
-        //
-        //                        Button(action: {
-        //
-        //                        }) {
-        //                            VStack {
-        //                                Image(systemName: "shippingbox.fill")
-        //                                    .foregroundColor(.red)
-        //                                    .font(.system(size: 24))
-        //                                    .padding()
-        //                                Text("Orders")
-        //                                    .foregroundColor(.red)
-        //                                    .font(.system(size: 14))
-        //                            }
-        //                        }
-        //
-        //                        Spacer()
-        //
-        //                        Button(action: {
-        //
-        //                        }) {
-        //                            VStack {
-        //                                Image(systemName: "person.fill")
-        //                                    .foregroundColor(.green)
-        //                                    .font(.system(size: 24))
-        //                                    .padding()
-        //                                Text("Sign  Out")
-        //                                    .foregroundColor(.green)
-        //                                    .font(.system(size: 14))
-        //                            }
-        //                        }
-        //
-        //                        Spacer()
-        //                    }
-        //
-        //                    .background(Color.white)
-        //
-        //               }
-        
     }
     
     

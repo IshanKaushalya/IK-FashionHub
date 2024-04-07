@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProductDetailView: View {
     @State var getSelection : String = ""
-    @StateObject var productVM = ClothViewModel()
+    //@StateObject var productVM = ClothViewModel()
+    @StateObject var productVM = ProductDetailViewModel()
     @State private var showAlert = false
     @State private var selectedSize: String? = nil
     @State private var quantity: Int = 1 
@@ -103,14 +104,14 @@ struct ProductDetailView: View {
                         .font(.system(size: 13))
                 }
             }
-                if($productVM.showSuccess){
+                if (productVM.showSuccess) {
                     Text("Added to cart")
                         .font(.system(size: 12))
                         .foregroundStyle(.green)
                 }
                 
                 if(productVM.showError){
-                    Text("Unable to Add select color or quantity")
+                    Text(productVM.errorMessage)
                         .font(.system(size: 12))
                         .foregroundStyle(.red)
                 }

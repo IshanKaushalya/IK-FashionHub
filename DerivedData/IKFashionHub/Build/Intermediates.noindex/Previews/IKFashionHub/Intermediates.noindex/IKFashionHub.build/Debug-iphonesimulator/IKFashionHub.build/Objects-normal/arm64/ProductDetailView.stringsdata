@@ -12,6 +12,10 @@
       },
       {
         "comment": "",
+        "key": "Added to cart"
+      },
+      {
+        "comment": "",
         "key": "Description: %@"
       },
       {
@@ -33,6 +37,18 @@
       {
         "comment": "",
         "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "ADD TO CART"
+      },
+      {
+        "comment": "",
+        "key": "Unable to Add to Cart"
+      },
+      {
+        "comment": "",
+        "key": "Make sure to login before add Favourites"
       }
     ]
   },

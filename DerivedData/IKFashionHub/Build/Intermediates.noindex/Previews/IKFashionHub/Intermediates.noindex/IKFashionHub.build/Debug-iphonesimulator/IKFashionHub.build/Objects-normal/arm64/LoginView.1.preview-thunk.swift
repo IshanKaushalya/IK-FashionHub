@@ -16,31 +16,31 @@ extension LoginView {
                 NavigationStack {
                     ZStack {
                         VStack {
-                            Image(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].arg[0].value", fallback: "sampleMen"))
+                            Image(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].arg[0].value", fallback: "sampleMen"))
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 120), height: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[2].arg[1].value", fallback: 120))
+                                .frame(width: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 120), height: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[2].arg[1].value", fallback: 120))
                                 .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[4].arg[0].value.modifier[0].arg[1].value", fallback: 4)))
-                                .shadow(radius: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[5].arg[0].value", fallback: 7))
-                                .padding(.top, __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[6].arg[1].value", fallback: 50))
+                                .overlay(Circle().stroke(Color.white, lineWidth: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[4].arg[0].value.modifier[0].arg[1].value", fallback: 4)))
+                                .shadow(radius: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[5].arg[0].value", fallback: 7))
+                                .padding(.top, __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[6].arg[1].value", fallback: 50))
                             if let user = userVM.user {
                                 Text(user.fullName)
                                     .font(.title)
                                     .fontWeight(.bold)
-                                    .padding(.bottom, __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[0].[0].modifier[2].arg[1].value", fallback: 5))
+                                    .padding(.bottom, __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[0].[0].modifier[2].arg[1].value", fallback: 5))
                                 
                                 Text(user.email)
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
-                                    .padding(.bottom, __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[0].[1].modifier[2].arg[1].value", fallback: 5))
+                                    .padding(.bottom, __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[0].[1].modifier[2].arg[1].value", fallback: 5))
                                 
                                 Text(user.address)
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
-                                    .padding(.bottom, __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[0].[2].modifier[2].arg[1].value", fallback: 20))
+                                    .padding(.bottom, __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[0].[2].modifier[2].arg[1].value", fallback: 20))
                             } else {
-                                Text(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[1].[0].arg[0].value", fallback: ""))
+                                Text(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].[1].[0].arg[0].value", fallback: ""))
                                     .onAppear {
                                         userVM.fetchUser(email: userVM.email)
                                         
@@ -50,13 +50,13 @@ extension LoginView {
                     }
                 }
                 
-                VStack(alignment: .center, spacing: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[1].value", fallback: 20)) {
+                VStack(alignment: .center, spacing: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[1].value", fallback: 20)) {
                     Button {
 
                         userVM.logout()
                     } label: {
                         HStack {
-                            HStack(spacing: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[2].value.[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: 3)) {
+                            HStack(spacing: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[2].value.[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: 3)) {
                                
                                 
                                 HStack {
@@ -71,46 +71,46 @@ extension LoginView {
                                             .padding()
                                             .foregroundColor(Color.black)
                                         
-                                        Text(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[2].value.[0].arg[1].value.[0].arg[0].value.[0].arg[1].value.[0].arg[0].value.[0].arg[0].value.[1].arg[0].value", fallback: "Sign out here"))
+                                        Text(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[2].value.[0].arg[1].value.[0].arg[0].value.[0].arg[1].value.[0].arg[0].value.[0].arg[0].value.[1].arg[0].value", fallback: "Sign out here"))
                                             .bold()
                                     }
                                 }
                                 
                             }
-                            .font(.system(size: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[2].value.[0].arg[1].value.[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 16)))
+                            .font(.system(size: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].arg[2].value.[0].arg[1].value.[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 16)))
                             .tint(.red)
                         }
                         
                     }
                     .frame(maxWidth: .infinity)
                 }
-                .opacity(__designTimeFloat("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].modifier[0].arg[0].value", fallback: 0.8))
+                .opacity(__designTimeFloat("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[0].[1].modifier[0].arg[0].value", fallback: 0.8))
                 Spacer()
                 
                 
                 
             } else {
                 
-                Image(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value", fallback: "user"))
+                Image(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value", fallback: "user"))
                     .resizable()
                     .scaledToFill()
-                    .frame(width: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].modifier[2].arg[0].value", fallback: 100), height: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].modifier[2].arg[1].value", fallback: 120))
-                    .padding(.vertical, __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].modifier[3].arg[1].value", fallback: 32))
+                    .frame(width: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].modifier[2].arg[0].value", fallback: 100), height: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].modifier[2].arg[1].value", fallback: 120))
+                    .padding(.vertical, __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[0].modifier[3].arg[1].value", fallback: 32))
                 
                 VStack {
-                    TextField(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].arg[0].value", fallback: "Email"), text: $email)
-                        .frame(width: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[0].arg[0].value", fallback: 320), height: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[0].arg[1].value", fallback: 50))
+                    TextField(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].arg[0].value", fallback: "Email"), text: $email)
+                        .frame(width: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[0].arg[0].value", fallback: 320), height: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[0].arg[1].value", fallback: 50))
                         .padding(.horizontal)
-                        .background(Color.gray.opacity(__designTimeFloat("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[2].arg[0].value.modifier[0].arg[0].value", fallback: 0.2)))
-                        .cornerRadius(__designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[3].arg[0].value", fallback: 5))
+                        .background(Color.gray.opacity(__designTimeFloat("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[2].arg[0].value.modifier[0].arg[0].value", fallback: 0.2)))
+                        .cornerRadius(__designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[0].modifier[3].arg[0].value", fallback: 5))
                         .textInputAutocapitalization(.never)
                     
-                    SecureField(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].arg[0].value", fallback: "Password"), text: $password)
-                        .frame(width: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[0].arg[0].value", fallback: 320), height: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[0].arg[1].value", fallback: 50))
+                    SecureField(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].arg[0].value", fallback: "Password"), text: $password)
+                        .frame(width: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[0].arg[0].value", fallback: 320), height: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[0].arg[1].value", fallback: 50))
                         .padding(.horizontal)
-                        .background(Color.gray.opacity(__designTimeFloat("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[2].arg[0].value.modifier[0].arg[0].value", fallback: 0.2)))
-                        .cornerRadius(__designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[3].arg[0].value", fallback: 5))
-                        .padding(.bottom, __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[4].arg[1].value", fallback: 20))
+                        .background(Color.gray.opacity(__designTimeFloat("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[2].arg[0].value.modifier[0].arg[0].value", fallback: 0.2)))
+                        .cornerRadius(__designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[3].arg[0].value", fallback: 5))
+                        .padding(.bottom, __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[1].arg[0].value.[1].modifier[4].arg[1].value", fallback: 20))
                     
                 }
                 .padding(.horizontal)
@@ -118,9 +118,9 @@ extension LoginView {
                 if userVM.showError {
                     Text(userVM.errorMessage)
                         .foregroundStyle(.red)
-                        .font(.system(size: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[2].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 14)))
+                        .font(.system(size: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[2].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 14)))
                 } else {
-                    Text(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[2].[1].[0].arg[0].value", fallback: ""))
+                    Text(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[2].[1].[0].arg[0].value", fallback: ""))
                 }
                 
                 Button(action: {
@@ -128,34 +128,34 @@ extension LoginView {
                     
                 }, label: {
                     HStack {
-                        Text(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "SIGN IN"))
+                        Text(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "SIGN IN"))
                             .foregroundStyle(.white).bold()
                     }
                     .foregroundColor(.white)
-                    .frame(width: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].arg[1].value.[0].modifier[1].arg[0].value", fallback: 300))
-                    .frame(height: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].arg[1].value.[0].modifier[2].arg[0].value", fallback: 50))
+                    .frame(width: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].arg[1].value.[0].modifier[1].arg[0].value", fallback: 300))
+                    .frame(height: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].arg[1].value.[0].modifier[2].arg[0].value", fallback: 50))
                 })
                 .background(Color(.black))
-                .cornerRadius(__designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].modifier[1].arg[0].value", fallback: 20))
+                .cornerRadius(__designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[3].modifier[1].arg[0].value", fallback: 20))
                 .padding(.top)
                 
                 
                 
                 Button(action: {
-                    showingRegister = __designTimeBoolean("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[0].value.[0].[0]", fallback: true)
+                    showingRegister = __designTimeBoolean("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[0].value.[0].[0]", fallback: true)
                     
                 }, label: {
                     HStack {
-                        Text(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "Register"))
+                        Text(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "Register"))
                             .foregroundStyle(.white).bold()
                     }
                     .foregroundColor(.white)
-                    .frame(width: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].modifier[1].arg[0].value", fallback: 300))
-                    .frame(height: __designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].modifier[2].arg[0].value", fallback: 50))
-                    .background(NavigationLink(__designTimeString("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].modifier[3].arg[0].value.arg[0].value", fallback: ""), destination: RegisterView(viewModel: registerVM), isActive: $showingRegister))
+                    .frame(width: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].modifier[1].arg[0].value", fallback: 300))
+                    .frame(height: __designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].modifier[2].arg[0].value", fallback: 50))
+                    .background(NavigationLink(__designTimeString("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].arg[1].value.[0].modifier[3].arg[0].value.arg[0].value", fallback: ""), destination: RegisterView(viewModel: registerVM), isActive: $showingRegister))
                 })
                 .background(Color(.red))
-                .cornerRadius(__designTimeInteger("#8635.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].modifier[1].arg[0].value", fallback: 20))
+                .cornerRadius(__designTimeInteger("#4929.[1].[7].property.[0].[0].arg[0].value.[0].[1].[4].modifier[1].arg[0].value", fallback: 20))
                 .padding(.top)
                 
                 

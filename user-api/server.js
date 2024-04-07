@@ -138,42 +138,30 @@ app.get('/api/users/:email', (req, res) => {
     });
 });
 
+// Insert into Cart
 app.post('/api/cart', (req, res) => {
-    const { userId, items } = req.body;
-    // Start a transaction to ensure all inserts are treated as a single operation
-    connection.beginTransaction((transactionError) => {
-        if (transactionError) {
-            return res.status(500).json({ message: 'Transaction start error', error: transactionError });
+    const { item_id, user_id, size, qty } = req.body;
+    const query = 'INSERT INTO cart (id, item_id, user_id, size, qty) values (null, ?, ?, ?, ?)';
+    connection.query(query, [item_id, user_id, size, qty], (err, result) => {
+        if (err) {
+            res.status(500).json({ message: 'Error adding cart items', error: err });
+            return;
         }
-        const queries = items.map(item => {
-            return new Promise((resolve, reject) => {
-                const query = 'REPLACE INTO cart (userId, productId, quantity, imageUrl) VALUES (?, ?, ?, ?)';
-                connection.query(query, [userId, item.product.id, item.quantity, item.product.image], (err, result) => {
-                    if (err) reject(err);
-                    resolve(result);
-                });
-            });
-        });
-        Promise.all(queries)
-            .then(() => {
-                connection.commit(commitError => {
-                    if (commitError) {
-                        return connection.rollback(() => {
-                            res.status(500).json({ message: 'Transaction commit error', error: commitError });
-                        });
-                    }
-                    res.status(201).json({ message: 'Cart saved successfully' });
-                });
-            })
-            .catch(queryError => {
-                connection.rollback(() => {
-                    res.status(500).json({ message: 'Transaction error', error: queryError });
-                });
-            });
+        res.status(200).json({ message: 'cart item added successfully', userId: result.email });
     });
 });
 
-
+app.post('/api/order', (req, res) => {
+    const { email, total, date } = req.body;
+    const query = 'INSERT INTO order_tb (id, email, total, order_date) values (null, ?, ?, ?)';
+    connection.query(query, [email, total, date], (err, result) => {
+        if (err) {
+            res.status(500).json({ message: 'Error adding favourite items', error: err });
+            return;
+        }
+        res.status(200).json({ message: 'Order placed successfully', userId: result.email });
+    });
+});
 
 
 
@@ -240,7 +228,7 @@ app.get('/api/productss/:id', (req, res) => {
 //get cart
 app.get('/api/cart/:email', (req, res) => {
     const email = req.params.email;
-    const query = `SELECT cart.id,product.prod_name,product.prod_price,product.prod_image,cart.size,cart.qty FROM cart JOIN product ON cart.item_id = product.id WHERE user_id = '${email}'`;
+    const query = `SELECT cart.id,products.productName,products.price,products.image,cart.size,cart.qty FROM cart JOIN products ON cart.item_id = products.id WHERE user_id = '${email}'`;
 
     connection.query(query, (error, results, fields) => {
         if (error) {
